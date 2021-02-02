@@ -1,0 +1,53 @@
+<html>
+    <title>
+        Titulo da Pagina    
+    </title>
+    <style>
+        .title
+        {
+            color: green;
+        }
+        .subtitle
+        {
+            color: blue;
+        }
+    </style>
+    <body>
+        <div id="root"></div>
+        <div id="root2"></div>
+
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        
+        <script>
+            //criando uma variavel pro createElement
+            var e = React.createElement;
+
+            //Faz a conexão do react com o Dom(html)
+            ReactDOM.render(
+                // criando elemento react
+                e(
+                    "h1", 
+                    {className: "title" }, 
+                    "Olá Mundo", 
+                    e("br"), 
+                    e("small", {className: "subtitle"}, "Teste Segunda Tag") ),
+                document.getElementById("root") // localizando elemento.
+            );
+        </script>
+        <script type="text/babel">
+            ReactDOM.render(
+                <h1 className="title">
+                    Utilizando babel
+                    <br/>
+                    <small className = "subtitle">
+                        Segunda Tag
+                    </small>
+                </h1>,
+                document.getElementById("root2") // localizando elemento.
+
+            )
+        </script>
+    </body>
+</html>
