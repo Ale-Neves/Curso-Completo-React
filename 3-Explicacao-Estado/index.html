@@ -21,7 +21,7 @@
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel"> 
-        function App()
+        function Contador()
         {
             const [state, setState] = React.useState(0);
 
@@ -36,27 +36,20 @@
                     >
                     Somar 1
                     </button>
-                    <button
-                      onClick = {() =>{
-                          setState(function (estadoAnterior)
-                          {
-                              return estadoAnterior + 1;
-                          });
-                          setState(function (estadoAnterior)
-                          {
-                              return estadoAnterior + 1;
-                          });
-                          setState(function (estadoAnterior)
-                          {
-                              return estadoAnterior + 1;
-                          });
-                          renderizar();
-                      }}
-                    >
-                    Somar +3
-                    </button>    
                 </div>
             );
+        }
+
+        const App = () => {
+            return(
+                <div>
+                    <p>
+                        Meus Contadores
+                        <Contador/>
+                        <Contador/>
+                    </p>
+                </div>
+            )
         }
             ReactDOM.render(
             <App />,
