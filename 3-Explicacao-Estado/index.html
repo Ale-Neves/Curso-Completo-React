@@ -35,6 +35,25 @@
                       }}
                     >
                     Somar 1
+                    </button>
+                    <button
+                      onClick = {() =>{
+                          setState(function (estadoAnterior)
+                          {
+                              return estadoAnterior + 1;
+                          });
+                          setState(function (estadoAnterior)
+                          {
+                              return estadoAnterior + 1;
+                          });
+                          setState(function (estadoAnterior)
+                          {
+                              return estadoAnterior + 1;
+                          });
+                          renderizar();
+                      }}
+                    >
+                    Somar +3
                     </button>    
                 </div>
             );
