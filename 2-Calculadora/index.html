@@ -72,24 +72,52 @@
         (
             <div class="header">Calculadora</div>
         );
-        const Calculadora = () =>
+
+        const Button = (props) =>
         (
-            <div class="calculadora">
-                <div class="display"></div>
-                <div class="keyboard">
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>0</button>
+            <button onClick={ () => {props.onNumberClick(props.value); }} > {props.value} </button>
+        )
+
+        const Calculadora = () =>
+        {   
+            const [display, setDisplay] = React.useState("");
+
+            const handleNumberClick = (value) =>
+            {
+                setDisplay(`${display}${value}`);
+            }
+
+            return(
+                <div class="calculadora">
+                    <div class="display">
+                        {display}
+                    </div>
+                    <div class="keyboard">
+                        <Button value="7"
+                            onNumberClick= { handleNumberClick} />
+                        <Button value="8"
+                            onNumberClick = {handleNumberClick} />
+                        <Button value="9"
+                            onNumberClick = {handleNumberClick} />
+                        <Button value="4"
+                            onNumberClick = {handleNumberClick} />
+                        <Button value="5"
+                            onNumberClick= { handleNumberClick} />
+                        <Button value="6"
+                            onNumberClick = {handleNumberClick} />
+                        <Button value="1"
+                            onNumberClick = {handleNumberClick} />
+                        <Button value="2"
+                            onNumberClick = {handleNumberClick} />
+                        <Button value="3"
+                            onNumberClick = {handleNumberClick} />
+                        <Button value="0"
+                            onNumberClick = {handleNumberClick} />
+                    </div>
                 </div>
-            </div>
-        );
+            );
+            
+        }
         const App = () =>
         (
                 <div>
